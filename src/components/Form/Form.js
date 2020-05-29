@@ -8,10 +8,14 @@ export default class Form extends Component {
 			name: '',
 			price: 0,
 			imgurl: '',
-			cancelClicked: false
+			cancelClicked: false,
+			editingId: null
 		};
         this.nameChange = this.nameChange.bind(this);
         this.cancel = this.cancel.bind(this)
+	}
+	componentDidUpdate(prevState) {
+		
 	}
 	imageChange(image) {
 		this.setState({
@@ -59,14 +63,14 @@ export default class Form extends Component {
 				name: res.data,
 				price: res.data,
 				imgurl: res.data
+				
 			})
 		})
 		this.getInv()
 	}
 	render() {
-		console.log(this.state.name)
+		console.log(this.state.inventory)
 		const {name, price, imgurl} = this.state
-		const product = (name, price, imgurl)
 		return (
 			<form>
 				<h3>

@@ -6,7 +6,7 @@ export default class Dashboard extends Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-			inventory: this.props.inventory
+			inventory: []
 		}
 		this.removeProduct = this.removeProduct.bind(this)
 	}
@@ -20,7 +20,7 @@ export default class Dashboard extends Component {
 	}
 
 	render() {
-		console.log(this.props)
+		//console.log(this.props)
 		const products = this.props.inventory.map(product => {
 			return (
 			<ProductFiles 
@@ -30,7 +30,7 @@ export default class Dashboard extends Component {
 			price={product.price}
 			img={product.imgurl}
 			rmProduct={this.removeProduct}
-			getInv={this.props.getInv}
+			inventory={this.inventory}
 			/>
 			)
 		})

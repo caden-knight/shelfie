@@ -9,7 +9,8 @@ class App extends React.Component {
 	constructor() {
 		super();
 		this.state = {
-			inventory: []
+			inventory: [],
+			currentlySelected: null
 		}
 		this.componentDidMount = this.componentDidMount.bind(this)
 	}
@@ -33,6 +34,7 @@ class App extends React.Component {
 				<Form 
 				getInv={this.componentDidMount}
 				inventory={this.state.inventory}
+				curSel={this.state.currentlySelected}
 				/>
 			</div>
 		);
